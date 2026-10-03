@@ -1,0 +1,20 @@
+[
+  {
+    "font": "SR56_Serif_CJK.ttf",
+    "source": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+    "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+    "license": "NotoSerifSC_OFL.txt",
+    "weight": 400,
+    "unicode_count": 394,
+    "subset_sha256": "fd0e6ec1372640b4254efd02b40365baf23843b407dbf4f730c03c19fc78aa94"
+  },
+  {
+    "font": "SR56_Sans_CJK.ttf",
+    "source": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+    "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+    "license": "NotoSansSC_OFL.txt",
+    "weight": 400,
+    "unicode_count": 394,
+    "subset_sha256": "5f2e42824f3fb86b70fe81417dc85a2dfcb486e752f8cb07b9b3af1d00e3f0c5"
+  }
+]

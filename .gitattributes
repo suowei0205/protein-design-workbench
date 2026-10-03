@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.ttf binary
+*.png binary
+*.jpg binary
+*.ipynb text
+# Preserve upstream license bytes, including their existing trailing whitespace.
+src/pwb/assets/fonts/LICENSE_DEJAVU whitespace=-blank-at-eol
+src/pwb/assets/fonts/*_OFL.txt whitespace=-blank-at-eol

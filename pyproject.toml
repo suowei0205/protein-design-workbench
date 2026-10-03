@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77,<83"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "protein-design-workbench"
+version = "0.1.0"
+description = "Local task execution, monitoring, and immutable research run archives"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "suowei0205"}]
+dependencies = ["nbclient>=0.10,<0.11", "nbformat>=5.10,<6", "jupyter-client>=8.6,<9"]
+
+[project.optional-dependencies]
+dev = ["build>=1.2,<2", "ruff>=0.11,<1", "bandit>=1.8,<2", "pip-audit>=2.9,<3", "ipykernel>=6.29,<8"]
+
+[project.scripts]
+pwb = "pwb.__main__:main"
+
+[project.urls]
+Repository = "https://github.com/suowei0205/protein-design-workbench"
+Issues = "https://github.com/suowei0205/protein-design-workbench/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pwb = ["assets/*", "assets/fonts/*", "templates/*"]
+
+[tool.ruff]
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["F", "E9"]
+
+[tool.bandit]
+exclude_dirs = ["tests", "src/pwb/templates"]

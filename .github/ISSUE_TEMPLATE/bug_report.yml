@@ -1,0 +1,18 @@
+name: Bug report
+description: Reproducible engineering defect with non-sensitive evidence
+body:
+  - type: markdown
+    attributes:
+      value: Do not include credentials, private sequences/structures, environment dumps or full research logs.
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal synthetic reproduction and software versions
+    validations:
+      required: true

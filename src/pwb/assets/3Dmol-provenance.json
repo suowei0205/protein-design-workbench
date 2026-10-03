@@ -1,0 +1,8 @@
+{
+  "version_banner": "3dmol v2.5.3",
+  "copied_from": "work/monitor/assets/3Dmol-min.js",
+  "sha256": "bcf422137a34b4e206413a8a83a67c24a1ace84e282bf3b164f6bda6aeb42a20",
+  "license_verified_source": "https://raw.githubusercontent.com/3dmol/3Dmol.js/master/LICENSE",
+  "license_retrieval": "web tool 2026-10-04; shell download DNS unavailable; full source text preserved",
+  "license_file": "3Dmol-LICENSE.txt"
+}
