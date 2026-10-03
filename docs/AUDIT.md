@@ -29,7 +29,7 @@ The reviewed scope is the public general-purpose workbench. This is an engineeri
 
 ## Remaining limits and maintenance work
 
-Linux process adoption and Python 3.10 execution are exercised by the repository CI; their eventual workflow result is separate evidence from this local audit. Real BindCraft/RFD3/RF3 GPU runs, GROMACS MD/pulling, peak memory, real WebGL, screen-reader evaluation and visual regression against a baseline are **NOT RUN** here. Use [REMOTE_SMOKE.md](REMOTE_SMOKE.md) on the workstation before accepting a scientific deployment.
+Linux process adoption and Python 3.10 execution passed on Ubuntu 24.04 in CI; this is separate evidence from the local macOS suite. Real BindCraft/RFD3/RF3 GPU runs, GROMACS MD/pulling, peak memory, real WebGL, screen-reader evaluation and visual regression against a baseline are **NOT RUN** here. Use [REMOTE_SMOKE.md](REMOTE_SMOKE.md) on the workstation before accepting a scientific deployment.
 
 Two inherited maintainability issues remain visible: the scientific validation module has long procedures (notably `validate`, 182 lines, and `_execute_md`, 115 lines), and several core/JS functions use dense formatting. Behavioral fixes were kept bounded instead of bundling a broad scientific-logic refactor into this publication. Those are nonblocking preview debt, not a claim of full style compliance. Future refactoring must preserve the existing scientific configuration/receipt tests and receive separate review.
 
@@ -39,4 +39,14 @@ Controller acceptance covered actual diffs, public scope, regression results, re
 
 The initial main run passed Python 3.12. Python 3.10 reached the final dependency audit, where the runner's preinstalled setuptools 79.0.1 was reported vulnerable (PYSEC-2026-3447; fixed version 83.0.0). The build backend and CI environment now require setuptools 83.x, which supports Python >=3.10. No advisory is ignored.
 
-The initial browser run failed before opening a page because Ubuntu AppArmor blocked the downloaded Chromium binary's user namespace sandbox. CI now installs a path-specific profile for the one downloaded headless-shell executable, following Chromium's official guide. The global user namespace restriction and `chromiumSandbox: true` remain enabled. CI uses Ubuntu 24.04 explicitly and current Node 24-based Actions pinned to verified commit IDs. The corrected Linux CI result must be recorded separately after it finishes.
+The initial browser run failed before opening a page because Ubuntu AppArmor blocked the downloaded Chromium binary's user namespace sandbox. CI now installs a path-specific profile for the one downloaded headless-shell executable, following Chromium's official guide. The global user namespace restriction and `chromiumSandbox: true` remain enabled. CI uses Ubuntu 24.04 explicitly and current Node 24-based Actions pinned to verified commit IDs. The corrected Linux CI result is recorded below.
+
+## Verified Linux CI evidence
+
+[Main run 37151495683](https://github.com/suowei0205/protein-design-workbench/actions/runs/37151495683), commit `2bb81c626987cf3d21c2e59c9830895d6829bcb9`:
+
+- Ubuntu 24.04 / Python 3.10: **93 tests passed**, 48.586 s, no skips. Lint, build, dependency consistency, high/medium Bandit gate and dependency vulnerability audit passed.
+- Ubuntu 24.04 / Python 3.12: **93 tests passed**, 36.432 s, no skips; the same gates passed.
+- Offline Chromium: **72 checks passed, 0 failures**, with the sandbox enabled.
+
+No real scientific GPU, MD, pulling or WebGL acceptance is implied by these results. The final documentation-only publication commit is checked again by the same workflow; its status is available on the repository Actions page.

@@ -1,5 +1,7 @@
 # Protein Design Workbench
 
+[![CI](https://github.com/suowei0205/protein-design-workbench/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/suowei0205/protein-design-workbench/actions/workflows/ci.yml)
+
 Local execution, professional monitoring, and permanent run archives for protein design and simulation.
 
 **预览版 / Engineering preview.** The executor targets a single-user Linux workstation. The public repository contains general code and synthetic tests, with no private targets, research notebooks, model weights, credentials, or research results. Real GPU and GROMACS validation remains a separate deployment acceptance step.
