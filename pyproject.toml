@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
 authors = [{name = "suowei0205"}]
-dependencies = ["nbclient>=0.10,<0.11", "nbformat>=5.10,<6", "jupyter-client>=8.6,<9"]
+dependencies = ["nbclient>=0.10,<0.12", "nbformat>=5.10,<6", "jupyter-client>=8.6,<9"]
 
 [project.optional-dependencies]
 dev = ["build>=1.2,<2", "ruff>=0.11,<1", "bandit>=1.8,<2", "pip-audit>=2.9,<3", "ipykernel>=6.29,<8"]
